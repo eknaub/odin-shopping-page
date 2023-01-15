@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 function ItemDetail() {
 
@@ -10,13 +10,11 @@ function ItemDetail() {
   const [item, setItem] = useState({
     images: {}
   });
-  const params = useParams();
 
+  
+  const data = useLocation();
   const fetchItem = async () => {
-    const data = await fetch(`https://fortnite-api.com/v2/cosmetics/br/${params.id}`);
-    const item = await data.json();
-
-    setItem(item.data);
+    console.log(data.state);
   }
   
   return (
