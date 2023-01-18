@@ -2,8 +2,6 @@ import styled from 'styled-components';
 import { Link } from "react-router-dom";
 import { useEffect } from 'react';
 import '../App.css'
-import { FaShoppingCart } from 'react-icons/fa';
-import { IconContext } from "react-icons";
 
 const Nav = () => {
   useEffect(() => {
@@ -27,15 +25,7 @@ const Nav = () => {
       <NavBarLinks>
         <NavBarLink to="/">Home</NavBarLink>
         <NavBarLink to="/shop">Shop</NavBarLink>
-        <NavBarLink to="/cart">
-        <div className='cart-background'>
-        <IconContext.Provider
-          value={ { color: "black", size: "35px"} }
-          > 
-            <FaShoppingCart/>
-          </IconContext.Provider>
-        </div>
-        </NavBarLink>
+        <NavBarLink to="/cart">Cart</NavBarLink>
       </NavBarLinks>
     </NavBar>
   )
